@@ -18,8 +18,9 @@ if {[string compare test [info procs test]] == 1} then {source defs}
 test fifo-basics-1.0 {Create memory fifo channels} {
     set m [fifo]
     close $m
+    regsub -all {[0-9]} $m {} m
     set m
-} {fifo0}
+} {fifo}
 
 if {0} {
     # Neither tell nor seek possible
@@ -41,11 +42,13 @@ if {0} {
 
 test fifo-basics-1.3 {Check fconfigure/get on memory fifo channels} {
     set m [fifo]
-    set res [fconfigure $m]
-    set res [lrange $res [set x [lsearch -exact $res -length]] [incr x]]
+    set conf [fconfigure $m]
+    set res [list]
+    lappend res [lrange $conf [set x [lsearch -exact $conf -length]] [incr x]]
+    lappend res [lrange $conf [set x [lsearch -exact $conf -allocated]] [incr x]]
     close $m
     set res
-} {-length 0}
+} {{-length 0} {-allocated 0}}
 
 test fifo-basics-1.4 {Check fconfigure/get -length} {
     set m [fifo]
