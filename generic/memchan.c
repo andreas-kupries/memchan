@@ -57,13 +57,17 @@ static int      GetFile      _ANSI_ARGS_((ClientData instanceData,
 					  int direction,
 					  ClientData* handlePtr));
 
+static int	BlockMode _ANSI_ARGS_((ClientData instanceData,
+				       int mode));
+
+
 /*
  * This structure describes the channel type structure for in-memory channels:
  */
 
 static Tcl_ChannelType channelType = {
   "memory",		/* Type name.                                    */
-  NULL,			/* Set blocking/nonblocking behaviour. NULL'able */
+  BlockMode,		/* Set blocking/nonblocking behaviour. */
   Close,		/* Close channel, clean instance data            */
   Input,		/* Handle read request                           */
   Output,		/* Handle write request                          */
@@ -97,6 +101,35 @@ typedef struct ChannelInstance {
   int            interest;  /* Interest in events as signaled by the user of
 			     * the channel */
 } ChannelInstance;
+
+/*
+ *----------------------------------------------------------------------
+ *
+ * BlockMode --
+ *
+ *	Helper procedure to set blocking and nonblocking modes on a
+ *	memory channel. Invoked by generic IO level code.
+ *
+ * Results:
+ *	0 if successful, errno when failed.
+ *
+ * Side effects:
+ *	Sets the device into blocking or non-blocking mode.
+ *
+ *----------------------------------------------------------------------
+ */
+
+static int
+BlockMode (instanceData, mode)
+     ClientData instanceData;
+     int mode;
+{
+    /* Fail if blocking is tried */
+    if (mode == TCL_MODE_BLOCKING) {
+        return EINVAL;
+    }
+    return 0;
+}
 
 /*
  *------------------------------------------------------*
