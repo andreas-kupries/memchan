@@ -14,7 +14,7 @@ AC_REVISION($Id$)
 # this package.
 #--------------------------------------------------------------------
 
-AC_INIT(../generic/memchan.c)
+AC_INIT(./generic/memchan.c)
 
 #--------------------------------------------------------------------
 # Setting our package name and version numbers.  The NODOT_VERSION is
@@ -24,12 +24,9 @@ AC_INIT(../generic/memchan.c)
 #--------------------------------------------------------------------
 
 PACKAGE=Memchan
-PACKAGE_SUB=Buf
 
 MAJOR_VERSION=@mMajor@
 MINOR_VERSION=@mMinor@
-#MAJOR_VERSION=10
-#MINOR_VERSION=0
 PATCHLEVEL=
 
 VERSION=${MAJOR_VERSION}.${MINOR_VERSION}${PATCHLEVEL}
@@ -237,27 +234,18 @@ case "`uname -s`" in
 	if test "${SHARED_BUILD}" = "1" ; then
 	    SHLIB_LD_LIBS="\"`cygpath -w ${TCL_BIN_DIR}/${TCL_STUB_LIB_FILE}`\" ${TCL_SHLIB_LD_LIBS}"
 	    eval "${PACKAGE}_LIB_FILE=${PACKAGE}${SHARED_LIB_SUFFIX}"
-	    eval "${PACKAGE}_STUB_LIB_FILE=${PACKAGE}stub${UNSHARED_LIB_SUFFIX}"
-	    eval "${PACKAGE_SUB}_STUB_LIB_FILE=${PACKAGE_SUB}stub${UNSHARED_LIB_SUFFIX}"
-
 	    RANLIB=:
 	else
 	    eval "${PACKAGE}_LIB_FILE=${PACKAGE}${UNSHARED_LIB_SUFFIX}"
-	    eval "${PACKAGE}_STUB_LIB_FILE=${PACKAGE}stub${UNSHARED_LIB_SUFFIX}"
-	    eval "${PACKAGE_SUB}_STUB_LIB_FILE=${PACKAGE_SUB}stub${UNSHARED_LIB_SUFFIX}"
 	fi
 	;;
     *)
 	if test "${SHARED_BUILD}" = "1" ; then
 	    SHLIB_LD_LIBS="${TCL_STUB_LIB_SPEC}"
 	    eval "${PACKAGE}_LIB_FILE=lib${PACKAGE}${SHARED_LIB_SUFFIX}"
-	    eval "${PACKAGE}_STUB_LIB_FILE=lib${PACKAGE}stub${UNSHARED_LIB_SUFFIX}"
-	    eval "${PACKAGE_SUB}_STUB_LIB_FILE=lib${PACKAGE_SUB}stub${UNSHARED_LIB_SUFFIX}"
 	    RANLIB=:
 	else
 	    eval "${PACKAGE}_LIB_FILE=lib${PACKAGE}${UNSHARED_LIB_SUFFIX}"
-	    eval "${PACKAGE}_STUB_LIB_FILE=lib${PACKAGE}stub${UNSHARED_LIB_SUFFIX}"
-	    eval "${PACKAGE_SUB}_STUB_LIB_FILE=lib${PACKAGE_SUB}stub${UNSHARED_LIB_SUFFIX}"
 	fi
 	;;
 esac
@@ -267,8 +255,6 @@ esac
 #--------------------------------------------------------------------
 
 AC_SUBST(Memchan_LIB_FILE)
-AC_SUBST(Memchan_STUB_LIB_FILE)
-AC_SUBST(Buf_STUB_LIB_FILE)
 AC_SUBST(SHLIB_LD_LIBS)
 
 #--------------------------------------------------------------------
@@ -279,16 +265,7 @@ AC_SUBST(SHLIB_LD_LIBS)
 # bugs in the pkg_mkIndex routine.
 #--------------------------------------------------------------------
 
-AC_PATH_PROGS(TCLSH_PROG,
-	tclsh8.2${EXEEXT} tclsh82${EXEEXT} tclsh${EXEEXT},
-	:,
-	${exec_prefix}/bin:${prefix}/bin:${PATH})
-
-if test "x${TCLSH_PROG}" = "x:" ; then
-    AC_MSG_WARN(No tclsh executable found.  You will have to build the pkgIndex.tcl file manually.)
-fi
-AC_SUBST(TCLSH_PROG)
-
+SC_PROG_TCLSH
 
 #--------------------------------------------------------------------
 # Finally, substitute all of the various values into the Makefile.

@@ -100,3 +100,8 @@ cd ..
 
 # create the file required by the NeoSoft CSA
 file copy ChangeLog.short CHANGES
+
+# Move contents of TEA directory into the toplevel.
+
+file rename         tea/README README.tea
+eval file rename -- [glob tea/*] [pwd]

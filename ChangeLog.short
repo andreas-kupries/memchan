@@ -1,6 +1,11 @@
-Changes from 2.1p1 to 2.2
+Changes from 2.1p2 to 2.1p3
 
-*	Two new channel types, 'null' and 'fifo2'.
+*	Integrated into TclPro build framework, upgraded some
+	TEA based files.
+
+Changes from 2.1p1 to 2.1p2
+
+*	Bug fix about usage of version information.
 
 Changes from 2.1 to 2.1p1
 
