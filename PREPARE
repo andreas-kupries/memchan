@@ -74,6 +74,15 @@ cd doc
 exec ../tools/manpage_regen > /dev/null 2>/dev/null
 cd ..
 
+file mkdir doc/art
+
+file rename htdocs/art/memchan2.2a1/htdocs/art/logo100.gif doc/art/
+file rename htdocs/art/memchan2.2a1/htdocs/art/logo520.jpg doc/art/
+file rename htdocs/art/memchan2.2a1/htdocs/art/logo64.gif  doc/art/
+
+mExclude htdocs
+
+
 #mHandleBinaryDistributions
 #mHandleBinaryDistributions doc/license.terms README
 
