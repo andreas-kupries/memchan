@@ -40,7 +40,7 @@ static int	Input _ANSI_ARGS_((ClientData instanceData,
 		    char *buf, int toRead, int *errorCodePtr));
 
 static int	Output _ANSI_ARGS_((ClientData instanceData,
-	            char *buf, int toWrite, int *errorCodePtr));
+	            CONST84 char *buf, int toWrite, int *errorCodePtr));
 
 static void	WatchChannel _ANSI_ARGS_((ClientData instanceData, int mask));
 static void	ChannelReady _ANSI_ARGS_((ClientData instanceData));
