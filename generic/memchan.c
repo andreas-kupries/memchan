@@ -48,13 +48,15 @@
 #ifdef TCL_STORAGE_CLASS
 # undef TCL_STORAGE_CLASS
 #endif
-#ifdef BUILD_trf
+#ifdef BUILD_memchan
 # define TCL_STORAGE_CLASS DLLEXPORT
 #else
 # define TCL_STORAGE_CLASS DLLIMPORT
 #endif
 
+#ifndef STATIC_BUILD
 #   if defined(_MSC_VER)
+#       undef EXPORT
 #	define EXPORT(a,b) TCL_STORAGE_CLASS a b
 #	define DllEntryPoint DllMain
 #   else
@@ -67,6 +69,10 @@
 #else
 #   define EXPORT(a,b) a b
 #endif
+#else
+#   define EXPORT(a,b) a b
+#endif
+
 
 /*
  * Number of bytes used to extend a storage area found to small.
@@ -787,7 +793,7 @@ char**      argv;		/* Argument strings. */
  *------------------------------------------------------*
  */
 
-EXTERN EXPORT (int,Memchan_Init) (interp)
+EXPORT (int,Memchan_Init) (interp)
 Tcl_Interp* interp;
 {
 #if GT81
@@ -826,7 +832,7 @@ Tcl_Interp* interp;
  *------------------------------------------------------*
  */
 
-EXTERN EXPORT (int,Memchan_SafeInit) (interp)
+EXPORT (int,Memchan_SafeInit) (interp)
 Tcl_Interp* interp;
 {
   return Memchan_Init (interp);
