@@ -255,7 +255,10 @@ install-libraries: libraries
 #========================================================================
 
 install-doc: doc
-	@echo "*Please* read the HTML documentation in ${MC_DOCDIR}/html/"
+	@echo "Information about the usage of this extension can be found"
+	@echo "in the HTML documentation at ${MC_DOCDIR}/html/index.html"
+	@echo "or, more specifically ${MC_DOCDIR}/html/memchan_cmds.html"
+	@echo "Just use your favorite browser to read them."
 
 #	Currently no documentation to install. We have documentation in HTML
 #	format, but there is no agreed upon place for them.
