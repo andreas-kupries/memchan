@@ -286,5 +286,5 @@ fi
 
 
 dnl
-AC_OUTPUT(Makefile pkgIndex)
+AC_OUTPUT(Makefile pkgIndex.tcl)
 

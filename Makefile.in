@@ -46,8 +46,12 @@ tool		=	$(srcdir)/tools
 INSTALL_ROOT =
 
 
+# Directory in which libMEMCHAN.a is at runtime:
+LIB_RUNTIME_DIR =	$(exec_prefix)/lib/$(EXTENSION)$(VERSION)
+
+
 # Directory in which to install the archive libMEMCHAN.a:
-LIB_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/lib/$(EXTENSION)$(VERSION)
+LIB_INSTALL_DIR =	$(INSTALL_ROOT)$(LIB_RUNTIME_DIR)
 
 
 # Directory in which to install the extended shell tclsh:

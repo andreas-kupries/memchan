@@ -2,4 +2,7 @@
 # prepare module MEMCHAN for distribution
 # CVS:	$Id$
 #
-# nothing to be done
+
+
+# remove internal directories
+exec /bin/rm -rf patches mails
