@@ -132,7 +132,7 @@ TCLLIB		= $(TCL_LIBRARIES)\tcl$(TCL_SHORTVERS).lib
 # Base name of the generated library, full names for DLL and its stub,
 # and complete installation directory for the package.
 
-MC		=	mchan@mShortDosVersion@
+MC		=	memchan@mShortDosVersion@
 MCLIB		=	$(MC).lib
 MCDLL		=	$(MC).dll
 INSTALLDIR	=	$(PKG_INSTALLBASEDIR)\$(MC)

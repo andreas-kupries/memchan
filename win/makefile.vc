@@ -55,7 +55,7 @@ NODEBUG=1
 # Do not modify below this line
 ######################################################################
 
-MC		=	mchan@mShortDosVersion@
+MC		=	memchan@mShortDosVersion@
 MCLIB		=	$(MC).lib
 MCDLL		=	$(MC).dll
 INSTALLDIR	=	$(TCL)\lib\$(MC)
