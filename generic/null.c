@@ -391,13 +391,14 @@ SetOption (instanceData, interp, optionName, newValue)
 
     if (!strcmp("-delay", optionName)) {
 	int delay = DELAY;
-	result = Tcl_GetInt(interp, newValue, &delay);
+	result = Tcl_GetInt(interp, (CONST84 char *)newValue, &delay);
 	if (result == TCL_OK) {
 	    chan->delay = delay;
 	    Tcl_SetObjResult(interp, Tcl_NewIntObj(delay));
 	}
     } else {
-	result = Tcl_BadChannelOption(interp, optionName, options);
+	result = Tcl_BadChannelOption(interp, 
+	    (CONST84 char *)optionName, (CONST84 char *)options);
     }
     return result;
 }

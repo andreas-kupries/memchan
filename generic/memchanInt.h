@@ -105,10 +105,17 @@ extern "C" {
 #define MC_UNCONSTB84
 #else
 #define MC_UNCONSTB84   (char*)
-#endif
+#endif /* GT84 */
 
 #ifndef CONST84
 #define CONST84
+#endif
+
+/*
+ * Pre-8.3 the Tcl_ChannelTypeVersion was not defined.
+ */
+#if ((TCL_MAJOR_VERSION >= 8) && (TCL_MINOR_VERSION < 3))
+typedef Tcl_DriverBlockModeProc* Tcl_ChannelTypeVersion;
 #endif
 
 #if ! (GT81)
