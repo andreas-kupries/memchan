@@ -91,6 +91,11 @@ Tcl_Interp* interp;
 			(ClientData) NULL,
 			(Tcl_CmdDeleteProc*) NULL);
 
+  Tcl_CreateObjCommand (interp, "zero",
+			&MemchanZeroCmd,
+			(ClientData) NULL,
+			(Tcl_CmdDeleteProc*) NULL);
+
 #if GT81
     /* register extension and its interfaces as now available package
      */

@@ -35,7 +35,8 @@ Memchan_SOURCES	=		\
 		fifo.c		\
 		fifo2.c		\
 		null.c		\
-		random.c		\
+		zero.c		\
+		random.c	\
 		buf.c		\
 		bufFix.c	\
 		bufExt.c	\
@@ -54,6 +55,7 @@ DOC_SOURCES = \
 	fifo.man \
 	fifo2.man \
 	null.man \
+	zero.man \
 	random.man
 
 #========================================================================
