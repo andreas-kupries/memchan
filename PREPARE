@@ -76,9 +76,9 @@ cd ..
 
 file mkdir doc/art
 
-file rename htdocs/art/memchan2.2a1/htdocs/art/logo100.gif doc/art/
-file rename htdocs/art/memchan2.2a1/htdocs/art/logo520.jpg doc/art/
-file rename htdocs/art/memchan2.2a1/htdocs/art/logo64.gif  doc/art/
+file rename htdocs/art/logo100.gif doc/art/
+file rename htdocs/art/logo520.jpg doc/art/
+file rename htdocs/art/logo64.gif  doc/art/
 
 mExclude htdocs
 
