@@ -3,7 +3,7 @@ dnl Process this file with autoconf to produce a configure script.
 dnl
 AC_REVISION($Id$)
 dnl
-AC_INIT(memchan.c)
+AC_INIT(Makefile.in)
 
 MEMCHAN_VERSION=@mFullVersion@
 MEMCHAN_MAJOR_VERSION=@mMajor@
@@ -42,8 +42,8 @@ AC_ARG_WITH(tcl-lib-dir,
 	[])
 
 AC_ARG_ENABLE(shared,
-	[  --enable-shared		build libmemchan as a shared library],
-	[ok=$enableval], [ok=no])
+	[  --disable-shared		don't build memchan as a shared library],
+	[ok=$enableval], [ok=yes])
 
 dnl ----------------------------------------------------------------
 dnl
