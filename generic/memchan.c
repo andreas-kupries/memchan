@@ -81,7 +81,7 @@
 	      ((TCL_MAJOR_VERSION == 8) && \
 	       (TCL_MINOR_VERSION >= 1)))
 
-if ! (GT81)
+#if ! (GT81)
 /* enable use of procedure internal to tcl */
 EXTERN void
 panic _ANSI_ARGS_ ((char* format, ...));
