@@ -170,7 +170,7 @@ bindist:	$(MCDLL)
 	-@md	$(MC)
 	-@$(CP) $(MCDLL)		$(MC)\$(MCDLL)
 	-@$(CP) $(ROOT)\pkgIndex.win	$(MC)\pkgIndex.tcl
-	$(PKZIP) -r $(MC)b.zip	$(MC)
+	$(PKZIP) -rp $(MC)b.zip	$(MC)\*.*
 	-@$(RM)	$(MC)\$(MCDLL)
 	-@$(RM)	$(MC)\pkgIndex.tcl
 	-@rd	$(MC)

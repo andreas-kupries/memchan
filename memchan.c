@@ -92,6 +92,9 @@ static void	WatchChannel _ANSI_ARGS_((ClientData instanceData, int mask));
 static int	ChannelReady _ANSI_ARGS_((ClientData instanceData, int mask));
 static Tcl_File GetFile      _ANSI_ARGS_((ClientData instanceData, int mask));
 
+static int      MemoryChannelCmd _ANSI_ARGS_ ((ClientData notUsed,
+					       Tcl_Interp* interp,
+					       int argc, char** argv));
 
 /*
  * This structure describes the channel type structure for in-memory channels:
@@ -531,7 +534,7 @@ int        mask;		/* Direction of interest */
  *------------------------------------------------------*
  */
 	/* ARGSUSED */
-int
+static int
 MemoryChannelCmd (notUsed, interp, argc, argv)
 ClientData  notUsed;		/* Not used. */
 Tcl_Interp* interp;		/* Current interpreter. */
