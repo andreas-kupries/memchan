@@ -34,7 +34,16 @@ mInsertInfo win/pkgIndex.tcl
 mExclude patches mails
 
 # generate configure script to be used
-cd unix
-mConfigure .
+mConfigure unix
 
-cd ..
+# Integrate tk-based testsuite interface.
+
+exec makedist tg
+exec tar xfz [glob tg*.tar.gz]
+eval file delete \
+	[glob tg*.README] [glob tg*.ANNOUNCE] \
+	[glob tg*.LSM] [glob tg*.tar.gz] \
+	[glob tg*.DESCRIPTION]
+
+eval file rename [glob tg*] testlib
+

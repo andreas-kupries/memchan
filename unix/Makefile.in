@@ -182,6 +182,16 @@ install-lib: $(MEMCHAN_LIB_FILE)
 	@$(RANLIB) $(LIB_INSTALL_DIR)/$(MEMCHAN_LIB_FILE)
 	@$(INSTALL_DATA) $(srcdir)/pkgIndex.tcl $(LIB_INSTALL_DIR)/pkgIndex.tcl
 
+test:
+	LD_LIBRARY_PATH="$(srcdir):$(TCL_LIB_DIR)";	export LD_LIBRARY_PATH; \
+	SHLIB_PATH="$LD_LIBRARY_PATH";			export SHLIB_PATH; \
+	wish ../testlib/tester -auto -delay 1
+
+ctest:
+	LD_LIBRARY_PATH="$(srcdir):$(TCL_LIB_DIR)"; \
+	echo lappend auto_path [pwd] \; package require Memchan \; \
+	cd $(srcdir)/tests \; source all | tclsh
+
 #-------------------------------------------------------#
 
 lib:	library
