@@ -327,8 +327,8 @@ TESTFLAGS = -file $(TESTPAT)
 
 all:	    setup $(PROJECT)
 $(PROJECT): setup $(PRJLIB) $(PRJSTUBLIB)
+doc:        setup $(PRJDOCS)
 install:    install-binaries install-libraries install-docs
-
 
 test: setup $(PROJECT)
 	set TCL_LIBRARY=$(ROOT)/library
