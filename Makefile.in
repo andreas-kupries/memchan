@@ -219,7 +219,7 @@ doc:
 		rm -rf doc ; mkdir doc		; \
 		cp $(srcdir)/doc/*.man doc/	; \
 	fi
-	cd doc ; ../tools/nroff_regen
+	cd doc ; $(TCLSH_ENV) ../tools/nroff_regen "$(TCLSH_PROG)"
 
 #	Currently no documentation to create, the HTML is part of the
 #	distribution.

@@ -9,6 +9,11 @@ This extension requires plain tcl, version 7.6 or higher.  If
 you don't have it installed, do this now.  The configure
 script (-> UNIX) will check the version of the installed tcl.
 
+Prerequisites:
+
+	Tcl, Tcllib
+	(The latter provides us with doctools and textutil::expander).
+
 
 1.)	Windows
 ===============
