@@ -154,6 +154,10 @@ MemchanNullCmd _ANSI_ARGS_ ((ClientData notUsed,
 			     Tcl_Interp* interp,
 			     int objc, Tcl_Obj*CONST objv[]));
 
+extern int
+MemchanRandomCmd _ANSI_ARGS_ ((ClientData notUsed,
+                  Tcl_Interp* interp,
+			      int objc, Tcl_Obj*CONST objv[]));
 
 /* Generator procedure for handles. Handles mutex issues for a thread
  * enabled version of tcl.
