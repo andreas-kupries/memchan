@@ -67,7 +67,7 @@ proc UpdateAnnounceMail {} {
     close         $fh
 
     set    fh [open ANNOUNCE.MAIL w]
-    puts  $fh [string map [list @ANO@ $ano @SIG@ $sig] $mail]
+    puts  $fh [string map [list @ANO@ [LastChanges] @SIG@ $sig] $mail]
     close $fh
     return
 }

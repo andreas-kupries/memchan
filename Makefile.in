@@ -259,6 +259,15 @@ binaries: $(BINARIES)
 libraries:
 
 doc:
+	if [ $(srcdir) != "." ] ; then		\
+		rm -rf tools htdocs;		; \
+		cp -rf $(srcdir)/tools .	; \
+		cp -rf $(srcdir)/htdocs .	; \
+		rm -rf doc ; mkdir doc		; \
+		cp $(srcdir)/doc/*.man doc/	; \
+	fi
+	cd doc ; ../tools/nroff_regen
+
 #	Currently no documentation to create, the HTML is part of the
 #	distribution.
 #	.................................................................
@@ -291,7 +300,7 @@ install-libraries: libraries
 
 install-doc: doc
 	$(mkinstalldirs) $(mandir)/mann
-	@for i in $(srcdir)/doc/*.n; \
+	@for i in doc/*.n; \
 	    do \
 	    echo "Installing `basename $$i`"; \
 	    rm -f $(mandir)/mann/`basename $$i`; \
@@ -365,7 +374,7 @@ checkstubs:
 
 dist:
 	rm -rf $(PACKAGE)$(MEMCHAN_VERSION)*
-	ls -d $(srcdir_/* > __FILES
+	ls -d $(srcdir)/* > __FILES
 	mkdir $(PACKAGE)$(MEMCHAN_VERSION)
 	cp -rf `cat __FILES | grep -v __FILES` $(PACKAGE)$(MEMCHAN_VERSION)
 	rm __FILES
