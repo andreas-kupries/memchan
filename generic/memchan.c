@@ -43,16 +43,8 @@ static int	Input _ANSI_ARGS_((ClientData instanceData,
 static int	Output _ANSI_ARGS_((ClientData instanceData,
 	            CONST84 char *buf, int toWrite, int *errorCodePtr));
 
-#if GT84
-#define SEEK_OFF_T Tcl_WideInt
-#define SEEK_OUT_T Tcl_WideInt
-#else
-#define SEEK_OFF_T long
-#define SEEK_OUT_T int
-#endif
-
-static SEEK_OUT_T	Seek _ANSI_ARGS_((ClientData instanceData,
-		    SEEK_OFF_T offset, int mode, int *errorCodePtr));
+static int	Seek _ANSI_ARGS_((ClientData instanceData,
+		    long offset, int mode, int *errorCodePtr));
 
 static void	WatchChannel _ANSI_ARGS_((ClientData instanceData, int mask));
 
@@ -295,10 +287,10 @@ int*          errorCodePtr;	/* Location of error flag. */
  *------------------------------------------------------*
  */
 
-static SEEK_OUT_T
+static int
 Seek (instanceData, offset, mode, errorCodePtr)
 ClientData instanceData;	/* The channel to manipulate */
-SEEK_OFF_T offset;		/* Size of movement. */
+long	   offset;		/* Size of movement. */
 int        mode;		/* How to move */
 int*       errorCodePtr;	/* Location of error flag. */
 {
