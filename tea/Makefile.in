@@ -279,10 +279,10 @@ install-binaries: binaries install-lib-binaries install-bin-binaries
 install-libraries: libraries
 	$(mkinstalldirs) $(includedir)
 	@echo "Installing header files in $(includedir)"
-	@for i in $(GENERIC_HDRS) ; do \
-	    echo "Installing $$i" ; \
-	    $(INSTALL_DATA) $$i $(includedir) ; \
-	done;
+#	@for i in $(GENERIC_HDRS) ; do \
+#	    echo "Installing $$i" ; \
+#	    $(INSTALL_DATA) $$i $(includedir) ; \
+#	done;
 
 #========================================================================
 # Install documentation.  Unix manpages should go in the $(mandir)
