@@ -226,8 +226,8 @@ binaries: $(BINARIES) pkgIndex.tcl-hand
 
 libraries:
 
-doc: $(DOCS_NROFF)
-doc-html: $(DOCS_HTML)
+doc: $(DOC_NROFF)
+doc-html: $(DOC_HTML)
 
 doc-old:
 	if [ "x$(srcdir)" != "x." -a "x$(srcdir)" != "x`pwd`" ] ; then	\
