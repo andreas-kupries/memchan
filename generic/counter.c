@@ -57,7 +57,7 @@ CONST char* prefix;
    */
 
 #if GT81
-  TCL_DECLARE_MUTEX (memchanCounterMutex);
+  TCL_DECLARE_MUTEX (memchanCounterMutex)
   static unsigned long memCounter = 0;
 
   char     channelName [50];

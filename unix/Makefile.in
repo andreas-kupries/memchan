@@ -161,6 +161,7 @@ HEADER		=
 SOURCES		=	$(GENERIC_DIR)/memchan.c	\
 			$(GENERIC_DIR)/init.c		\
 			$(GENERIC_DIR)/counter.c
+
 OBJECTS		=	memchan.o init.o counter.o
 
 
