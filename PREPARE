@@ -7,10 +7,13 @@
 #    (version, patchlevel, current date)
 
 file copy pkgIndex.tcl.in pkgIndex.win
-set mInfo(@configure_input@) "Distributed at $mDate"
+set mInfo(@configure_input@)  "Distributed at $mDate"
+set mInfo(@MEMCHAN_VERSION@)  $mVersion
+set mInfo(@MEMCHAN_LIB_FILE@) mchan${mShortDosVersion}.dll
+#                             ~~~~~ coordinate with makefile.vc
 
 mInsertInfo \
-	LSM DESCRIPTION README ANNOUNCE \
+	LSM DESCRIPTION README ANNOUNCE manual \
 	configure.in Makefile.in makefile.vc pkgIndex.win
 
 # remove internal directories

@@ -48,7 +48,7 @@ NODEBUG=1
 TCLSH		=	$(TCL)\bin\tclsh80.exe
 TCLLIB		=	$(TCL)\bin\tcl80.lib
 
-MC		=	mchan@mDosVersion@
+MC		=	mchan@mShortDosVersion@
 MCLIB		=	$(MC).lib
 MCDLL		=	$(MC).dll
 INSTALLDIR	=	$(TCL)\lib\$(MC)
