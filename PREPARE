@@ -21,7 +21,7 @@ mExclude \
 mExclude LSM ANNOUNCE
 
 eval mInsertInfo \
-	DESCRIPTION doc/manual \
+	DESCRIPTION \
 	README win/README win/README.VC mac/README \
 	unix/configure.in unix/Makefile.in \
 	tea/configure.in tea/Makefile.in \
