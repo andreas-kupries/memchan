@@ -195,8 +195,8 @@ int*       errorCodePtr;	/* Location of error flag */
   chan = (ChannelInstance*) instanceData;
 
   if (chan->length == 0) {
-    *errorCodePtr = EWOULDBLOCK;
-    return -1;
+    /* Signal EOF to higher layer */
+    return 0;
   }
 
   toRead        = Buf_QueueRead (chan->queue, buf, toRead);

@@ -179,9 +179,8 @@ int*       errorCodePtr;	/* Location of error flag */
   chan = (ChannelInstance*) instanceData;
 
   if ((chan->used - chan->rwLoc) <= 0) {
-    /* At end, block request */
-    *errorCodePtr = EWOULDBLOCK;
-    return -1;
+    /* Signal EOF to higher layer */
+    return 0;
   }
 
   if ((chan->rwLoc + toRead) > chan->used) {
