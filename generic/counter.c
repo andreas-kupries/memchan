@@ -28,9 +28,6 @@
  */
 
 
-#include <tcl.h>
-#include <errno.h>
-
 #include "memchanInt.h"
 
 Tcl_Obj*

@@ -117,7 +117,7 @@ panic _ANSI_ARGS_ (TCL_VARARGS(char*, format));
 #ifdef HAVE_LTOA
 #define LTOA(x,str) ltoa (x, str, 10)
 #else
-#define LTOA(x,str) sprintf (str, "%lu", x)
+#define LTOA(x,str) sprintf (str, "%lu", (unsigned long) (x))
 #endif
 
 
@@ -131,6 +131,16 @@ MemchanCmd _ANSI_ARGS_ ((ClientData notUsed,
 
 extern int
 MemchanFifoCmd _ANSI_ARGS_ ((ClientData notUsed,
+			     Tcl_Interp* interp,
+			     int objc, Tcl_Obj*CONST objv[]));
+
+extern int
+MemchanFifo2Cmd _ANSI_ARGS_ ((ClientData notUsed,
+			      Tcl_Interp* interp,
+			      int objc, Tcl_Obj*CONST objv[]));
+
+extern int
+MemchanNullCmd _ANSI_ARGS_ ((ClientData notUsed,
 			     Tcl_Interp* interp,
 			     int objc, Tcl_Obj*CONST objv[]));
 
