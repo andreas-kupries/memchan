@@ -5,12 +5,6 @@
 # Exclude older binary distributions, they are made available through the 1.9 site.
 
 mExclude \
-	win/bdist/cygwin.jan.19.1 \
-	win/bdist/cygwin.jan.19.2 \
-	win/bdist/vc6.ak.19.1     \
-	unix/bdist/ak.1           \
-	unix/bdist/ak.2           \
-	unix/bdist/ak.3 \
 	doc/nodes doc/manual
 
 
