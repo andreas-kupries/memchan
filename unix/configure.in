@@ -360,6 +360,8 @@ dnl AC_CHECK_LIB(socket, main, [LIBS="$LIBS -lsocket"])
 dnl AC_CHECK_LIB(nsl, main, [LIBS="$LIBS -lnsl"])
 dnl AC_SUBST(LIBS)
 
+AC_CHECK_FUNCS(ltoa)
+
 dnl ----------------------------------------------------------------
 dnl non-standard substitutions
 dnl

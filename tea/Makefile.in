@@ -271,8 +271,9 @@ install-doc: doc
 #	    chmod 444 $(mandir)/mann/$$i; \
 #       done
 
+check:	test
 test:
-	echo load $(Memchan_LIB_FILE) \; cd $(MC_TESTDIR) \; source all | $(TCLSH_PROG)
+	echo load ./$(Memchan_LIB_FILE) \; cd $(MC_TESTDIR) \; source all | $(TCLSH_PROG)
 
 #	LD_LIBRARY_PATH="$(srcdir):$(TCL_LIB_DIR)"; export \
 #	SHLIB_PATH="$(srcdir):$(TCL_LIB_DIR)"; \

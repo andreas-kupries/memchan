@@ -204,6 +204,13 @@ fi
 AC_DEFINE(USE_TCL_STUBS)
 
 #--------------------------------------------------------------------
+# If ltoa is present, use it to convert integer values into strings.
+# If not, sprintf is used, which is slower and requires more code.
+#--------------------------------------------------------------------
+
+AC_CHECK_FUNCS(ltoa)
+
+#--------------------------------------------------------------------
 # This macro generates a line to use when building a library.  It
 # depends on values set by the SC_ENABLE_SHARED, SC_ENABLE_SYMBOLS,
 # and SC_LOAD_TCLCONFIG macros above.

@@ -61,7 +61,7 @@ CONST char* prefix;
 
   Tcl_MutexLock (&memchanCounterMutex);
   {
-    sprintf (channelName, "%lu", memCounter);
+    LTOA (memCounter, channelName);
     memCounter ++;
   }
   Tcl_MutexUnlock (&memchanCounterMutex);
@@ -76,7 +76,7 @@ CONST char* prefix;
   char     channelName [50];
   Tcl_Obj* res = Tcl_NewStringObj ((char*) prefix, -1);
 
-  sprintf (channelName, "%lu", memCounter);
+  LTOA (memCounter, channelName);
   memCounter ++;
 
   Tcl_AppendStringsToObj (res, channelName, (char*) NULL);

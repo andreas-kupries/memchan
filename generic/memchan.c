@@ -374,7 +374,7 @@ Tcl_DString* dsPtr;		/* String to place the result into */
     Tcl_DStringAppendElement (dsPtr, "-length");
   }
 
-  sprintf (buffer, "%lu", chan->used);
+  LTOA (chan->used, buffer);
   Tcl_DStringAppendElement (dsPtr, buffer);
 
   return TCL_OK;
