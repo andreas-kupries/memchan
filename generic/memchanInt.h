@@ -129,7 +129,9 @@ extern "C" {
 #else
 #define MC_UNCONSTB84   (char*)
 #endif
-
+#ifndef CONST84
+#define CONST84
+#endif
 
 
 #if ! (GT81)
