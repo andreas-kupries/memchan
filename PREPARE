@@ -69,7 +69,7 @@ eval file rename [glob tg*] testlib
 # site and standalone distribution
 
 #mHandleBinaryDistributions
-mHandleBinaryDistributions doc/license.terms README
+mHandleBinaryDistributions memchan doc/license.terms README
 
 # -up-man assumes that the document is part of the
 # hierarchy at http://www.oche.de/~akupries
