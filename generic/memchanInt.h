@@ -171,29 +171,14 @@ MemchanZeroCmd _ANSI_ARGS_ ((ClientData notUsed,
 extern Tcl_Obj*
 MemchanGenHandle _ANSI_ARGS_ ((CONST char* prefix));
 
+#ifdef __cplusplus
+}
+#endif /* C++ */
+
 /*
  * Exported functionality.
  */
 
-/*
- * Windows needs to know which symbols to export.  Unix does not.
- * BUILD_Memchan should be undefined for Unix.
- */
+#include "memchan.h"
 
-#ifdef BUILD_Memchan
-#undef TCL_STORAGE_CLASS
-#define TCL_STORAGE_CLASS DLLEXPORT
-#endif /* BUILD_Memchan */
-
-
-EXTERN int Memchan_Init _ANSI_ARGS_ ((Tcl_Interp* interp));
-EXTERN int Memchan_SafeInit _ANSI_ARGS_ ((Tcl_Interp* interp));
-
-
-#undef TCL_STORAGE_CLASS
-#define TCL_STORAGE_CLASS DLLIMPORT
-
-#ifdef __cplusplus
-}
-#endif /* C++ */
 #endif /* MEMCHAN_H */

@@ -142,6 +142,7 @@ EXTERN int		Buf_QueueSize _ANSI_ARGS_((Buf_BufferQueue queue));
 
 typedef struct BufStubHooks {
     struct BufIntStubs *bufIntStubs;
+    struct MemchanStubs *memchanStubs;
 } BufStubHooks;
 
 typedef struct BufStubs {
