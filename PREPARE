@@ -12,7 +12,7 @@ mInsertInfo \
 	DESCRIPTION doc/manual \
 	README win/README win/README.VC mac/README \
 	unix/configure.in unix/Makefile.in \
-	win/makefile.vc
+	win/makefile.vc win/mc.rc
 
 mGetDescription
 mExpandUrls
