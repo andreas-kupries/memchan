@@ -216,7 +216,7 @@ Buf_QueueRead (queue, outbuf, size)
 int
 Buf_QueueWrite (queue, inbuf, size)
 Buf_BufferQueue queue;
-char*           inbuf;
+CONST char*     inbuf;
 int             size;
 {
   Queue* q = (Queue*) queue;

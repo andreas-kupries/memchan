@@ -185,7 +185,7 @@ int*       errorCodePtr;	/* Location of error flag */
 static int
 Output (instanceData, buf, toWrite, errorCodePtr)
 ClientData instanceData;	/* The channel to write to */
-char*      buf;			/* Data to be stored. */
+CONST84 char* buf;		/* Data to be stored. */
 int        toWrite;		/* Number of bytes to write. */
 int*       errorCodePtr;	/* Location of error flag. */
 {

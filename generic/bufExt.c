@@ -185,7 +185,7 @@ DupProc (buf, clientData)
   ExtBuffer* iBuf   = (ExtBuffer*) clientData;
   ExtBuffer* newBuf = (ExtBuffer*) Tcl_Alloc (sizeof(ExtBuffer) +
 					      (iBuf->limit - iBuf->data));
-  Buf_Buffer   new    = Buf_Create (&ext, newBuf);
+  Buf_Buffer   new    = Buf_Create (&ext, (ClientData) newBuf);
 
   newBuf->buf      = new;
   newBuf->data     = Tcl_Alloc (iBuf->size);
@@ -311,7 +311,7 @@ Buf_CreateExtendableBuffer (size)
      int size;
 {
   ExtBuffer* newBuf = (ExtBuffer*) Tcl_Alloc (sizeof(ExtBuffer));
-  Buf_Buffer new    = Buf_Create (&ext, newBuf);
+  Buf_Buffer new    = Buf_Create (&ext, (ClientData) newBuf);
 
   newBuf->buf      = new;
   newBuf->size     = size;

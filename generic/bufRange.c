@@ -179,7 +179,7 @@ DupProc (buf, clientData)
 {
   RangeBuffer* iBuf   = (RangeBuffer*) clientData;
   RangeBuffer* newBuf = (RangeBuffer*) Tcl_Alloc (sizeof(RangeBuffer));
-  Buf_Buffer   new    = Buf_Create (&range, newBuf);
+  Buf_Buffer   new    = Buf_Create (&range, (ClientData) newBuf);
 
   newBuf->buf  = iBuf->buf;
   newBuf->size = iBuf->size;
@@ -258,7 +258,7 @@ Buf_CreateRange (buf, size)
   }
 
   newBuf = (RangeBuffer*) Tcl_Alloc (sizeof(RangeBuffer));
-  new    = Buf_Create (&range, newBuf);
+  new    = Buf_Create (&range, (ClientData) newBuf);
   loc    = Buf_Tell (buf);
 
   if (Buf_GetType (buf) == &range) {

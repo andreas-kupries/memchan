@@ -57,7 +57,7 @@ Buf_InitStubs _ANSI_ARGS_((Tcl_Interp *interp, CONST char *version, int exact));
  *------------------------------------------------------*
  */
 
-EXPORT (int,Memchan_Init) (interp)
+int Memchan_Init (interp)
 Tcl_Interp* interp;
 {
 #if GT81
@@ -122,7 +122,7 @@ Tcl_Interp* interp;
  *------------------------------------------------------*
  */
 
-EXPORT (int,Memchan_SafeInit) (interp)
+int Memchan_SafeInit (interp)
 Tcl_Interp* interp;
 {
   return Memchan_Init (interp);

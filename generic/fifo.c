@@ -232,7 +232,7 @@ int*       errorCodePtr;	/* Location of error flag */
 static int
 Output (instanceData, buf, toWrite, errorCodePtr)
 ClientData instanceData;	/* The channel to write to */
-char*      buf;			/* Data to be stored. */
+CONST84 char* buf;		/* Data to be stored. */
 int        toWrite;		/* Number of bytes to write. */
 int*       errorCodePtr;	/* Location of error flag. */
 {
@@ -275,7 +275,7 @@ static int
 GetOption (instanceData, interp, optionName, dsPtr)
 ClientData   instanceData;	/* Channel to query */
 Tcl_Interp*  interp;		/* Interpreter to leave error messages in */
-char*        optionName;	/* Name of reuqested option */
+CONST84 char* optionName;	/* Name of reuqested option */
 Tcl_DString* dsPtr;		/* String to place the result into */
 {
   /*

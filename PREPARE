@@ -24,7 +24,7 @@ eval mInsertInfo \
 	DESCRIPTION \
 	README win/README win/README.VC mac/README \
 	unix/configure.in unix/Makefile.in \
-	tea/configure.in tea/Makefile.in \
+	tea/configure.in tea/Makefile.in tea/pkgIndex.tcl \
 	[glob win/makefile.vc*] win/Makefile.gnu win/mc.rc
 
 mGetDescription

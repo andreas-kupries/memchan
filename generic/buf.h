@@ -55,7 +55,7 @@ extern "C" {
 #ifdef MAC_TCL
 #define VECTOR(returns,name) typedef pascal returns *(name)
 #elif defined __WIN32__
-#define VECTOR(returns,name) typedef returns (__stdcall name)
+#define VECTOR(returns,name) typedef returns (name)
 #else
 #define VECTOR(returns,name) typedef returns (name)
 #endif

@@ -189,7 +189,7 @@ DupProc (buf, clientData)
 {
   FixedBuffer* iBuf   = (FixedBuffer*) clientData;
   FixedBuffer* newBuf = (FixedBuffer*) Tcl_Alloc (sizeof(FixedBuffer) + iBuf->size);
-  Buf_Buffer   new    = Buf_Create (&fix, newBuf);
+  Buf_Buffer   new    = Buf_Create (&fix, (ClientData) newBuf);
 
   newBuf->buf      = new;
   newBuf->size     = iBuf->size;
@@ -302,7 +302,7 @@ Buf_CreateFixedBuffer (size)
      int size;
 {
   FixedBuffer* newBuf = (FixedBuffer*) Tcl_Alloc (sizeof(FixedBuffer) + size);
-  Buf_Buffer   new    = Buf_Create (&fix, newBuf);
+  Buf_Buffer   new    = Buf_Create (&fix, (ClientData) newBuf);
 
   newBuf->buf      = new;
   newBuf->size     = size;
