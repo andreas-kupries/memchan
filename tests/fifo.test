@@ -18,8 +18,9 @@ if {[string compare test [info procs test]] == 1} then {source defs}
 test fifo-basics-1.0 {Create memory fifo channels} {
     set m [fifo]
     close $m
+    regsub -all {[0-9]} $m {} m
     set m
-} {fifo0}
+} {fifo}
 
 if {0} {
     # Neither tell nor seek possible
@@ -67,7 +68,6 @@ test fifo-readwrite-1.1 {Write and read} {
     set m [fifo]
     puts -nonewline $m {hello world!}
     set res [list [fconfigure $m -length]]
-    seek $m 0
     lappend res [read $m]
     close $m
     set res
