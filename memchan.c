@@ -636,7 +636,7 @@ Tcl_Interp* interp;
  *------------------------------------------------------*
  */
 
-EXTERN EXPORT (int,Mem_SafeInit) (interp)
+EXTERN EXPORT (int,Memchan_SafeInit) (interp)
 Tcl_Interp* interp;
 {
   return Memchan_Init (interp);
