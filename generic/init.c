@@ -58,17 +58,6 @@ Tcl_Interp* interp;
   }
 #endif
 
-#if TCL_MAJOR_VERSION < 8
-  Tcl_CreateCommand (interp, "memchan",
-		     &MemchanCmd,
-		     (ClientData) NULL,
-		     (Tcl_CmdDeleteProc*) NULL);
-
-  Tcl_CreateCommand (interp, "fifo",
-		     &MemchanFifoCmd,
-		     (ClientData) NULL,
-		     (Tcl_CmdDeleteProc*) NULL);
-#else
   Tcl_CreateObjCommand (interp, "memchan",
 			&MemchanCmd,
 			(ClientData) NULL,
@@ -78,7 +67,6 @@ Tcl_Interp* interp;
 			&MemchanFifoCmd,
 			(ClientData) NULL,
 			(Tcl_CmdDeleteProc*) NULL);
-#endif
 
   /* register memory channels as available package */
   Tcl_PkgProvide (interp, "Memchan", MEMCHAN_VERSION);
