@@ -84,7 +84,7 @@
 
 /* enable use of procedure internal to tcl */
 EXTERN void
-panic _ANSI_ARGS_ ((CONST char* format, ...));
+panic _ANSI_ARGS_ ((char* format, ...));
 
 /*
  * Forward declarations of internal procedures.
