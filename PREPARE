@@ -71,32 +71,5 @@ eval file rename [glob tg*] testlib
 #mHandleBinaryDistributions
 mHandleBinaryDistributions doc/license.terms README
 
-# -up-man assumes that the document is part of the
-# hierarchy at http://www.oche.de/~akupries
-# It resides at '~akupries/soft/setops/index.html'
-# The tcltk page is '~akupries/tcltk.html'
-
-cd doc
-file mkdir html html/img
-
-mLog info generating documentation tree
-
-exec nodeCompile westend html nodes 
-
-cd ..
-mDocTGZArchive doc/html
-mDocZIPArchive doc/html
-cd doc
-
-eval file delete -force [glob html/*.html]
-
-file delete -force nodes/a_up.def
-exec nodeCompile     plain html              nodes
-exec nodeMakeSitemap plain html memchan_home nodes
-
-mExclude nodes manual INSTALL
-cd ..
-
-
 # create the file required by the NeoSoft CSA
 file copy ChangeLog.short CHANGES
