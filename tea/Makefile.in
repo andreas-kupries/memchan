@@ -20,7 +20,7 @@
 # from everything else which was predefined by TEA.
 #========================================================================
 
-MC_TOPDIR	=	$(srcdir)/..
+MC_TOPDIR	=	$(srcdir)
 MC_GENSRCDIR	=	$(MC_TOPDIR)/generic
 MC_DOCDIR	=	$(MC_TOPDIR)/doc
 MC_TOOLDIR	=	$(MC_TOPDIR)/tools

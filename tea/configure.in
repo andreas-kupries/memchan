@@ -14,7 +14,7 @@ AC_REVISION($Id$)
 # this package.
 #--------------------------------------------------------------------
 
-AC_INIT(../generic/memchan.c)
+AC_INIT(./generic/memchan.c)
 
 #--------------------------------------------------------------------
 # Setting our package name and version numbers.  The NODOT_VERSION is
