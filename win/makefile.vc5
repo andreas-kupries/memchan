@@ -140,6 +140,7 @@ INSTALLDIR	=	$(PKG_INSTALLBASEDIR)\$(MC)
 # List of the object files to generate and link.
 
 MCOBJS =	$(TMPDIR)\memchan.obj	\
+		$(TMPDIR)\fifo.obj	\
 		$(TMPDIR)\init.obj	\
 		$(TMPDIR)\counter.obj
 

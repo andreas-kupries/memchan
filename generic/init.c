@@ -93,6 +93,11 @@ Tcl_Interp* interp;
 		     (ClientData) NULL,
 		     (Tcl_CmdDeleteProc*) NULL);
 
+  Tcl_CreateCommand (interp, "fifo",
+		     &MemchanFifoCmd,
+		     (ClientData) NULL,
+		     (Tcl_CmdDeleteProc*) NULL);
+
   /* register memory channels as available package */
   Tcl_PkgProvide (interp, "Memchan", MEMCHAN_VERSION);
 

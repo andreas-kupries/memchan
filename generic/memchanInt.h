@@ -119,10 +119,31 @@ panic _ANSI_ARGS_ ((char* format, ...));
 /* Internal command visible to other parts of the package.
  */
 
+if TCL_MAJOR_VERSION < 8
+
 extern int
 MemchanCmd _ANSI_ARGS_ ((ClientData notUsed,
-			       Tcl_Interp* interp,
-			       int argc, char** argv));
+			 Tcl_Interp* interp,
+			 int argc, char** argv));
+
+extern int
+MemchanFifoCmd _ANSI_ARGS_ ((ClientData notUsed,
+			     Tcl_Interp* interp,
+			     int argc, char** argv));
+#define ARGC argc
+#else
+extern int
+MemchanCmd _ANSI_ARGS_ ((ClientData notUsed,
+			 Tcl_Interp* interp,
+			 int objc, Tcl_Obj** objv));
+
+extern int
+MemchanFifoCmd _ANSI_ARGS_ ((ClientData notUsed,
+			     Tcl_Interp* interp,
+			     int objc, Tcl_Obj** objv));
+#define ARGC objc
+#endif
+
 
 /* Generator procedure for handles. Handles mutex issues for a thread
  * enabled version of tcl.
