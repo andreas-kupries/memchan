@@ -1,19 +1,8 @@
-Fri May  5 00:19:45 2000  Andreas Kupries  <a.kupries@westend.com>
+Wed Oct  4 20:00:25 2000  Andreas Kupries  <a.kupries@westend.com>
 
-	* generic/fifo2.c: Added bi-directional fifo.
-
-Thu May  4 20:43:16 2000  Andreas Kupries  <a.kupries@westend.com>
-
-	* generic/init.c (Memchan_Init): Added the 'null' command for the
-	  creation of null channels.
-
-	* generic/null.c: New channel type, the null device.
-
-	* generic/fifo.c: Simplified through the use of the new buffer
-	  functionality.
-
-	* generic/buf*: Worked on a new buffering system for memchan and
-	  possibly the Tcl I/O system for the last few days.
+	* Fixed problem with use of version information in
+ 	  unix/pkgIndex.tcl.in. Can't use the patchlevel here, would choke
+ 	  the package ifneeded/require commands.
 
 Sat Jan 15 00:28:52 2000  Andreas Kupries  <a.kupries@westend.com>
 
