@@ -45,8 +45,17 @@
  * our entry point.
  */
 
+#ifdef TCL_STORAGE_CLASS
+# undef TCL_STORAGE_CLASS
+#endif
+#ifdef BUILD_trf
+# define TCL_STORAGE_CLASS DLLEXPORT
+#else
+# define TCL_STORAGE_CLASS DLLIMPORT
+#endif
+
 #   if defined(_MSC_VER)
-#	define EXPORT(a,b) __declspec(dllexport) a b
+#	define EXPORT(a,b) TCL_STORAGE_CLASS a b
 #	define DllEntryPoint DllMain
 #   else
 #	if defined(__BORLANDC__)
