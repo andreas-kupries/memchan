@@ -61,9 +61,18 @@ MCDLL		=	$(MC).dll
 INSTALLDIR	=	$(TCL)\lib\$(MC)
 
 MCOBJS		=	$(TMPDIR)\memchan.obj	\
-			$(TMPDIR)\fifo.obj	\
 			$(TMPDIR)\init.obj	\
 			$(TMPDIR)\counter.obj	\
+			$(TMPDIR)\fifo.obj	\
+			$(TMPDIR)\fifo2.obj	\
+			$(TMPDIR)\null.obj	\
+			$(TMPDIR)\buf.obj	\
+			$(TMPDIR)\bufFix.obj	\
+			$(TMPDIR)\bufExt.obj	\
+			$(TMPDIR)\bufRange.obj	\
+			$(TMPDIR)\bufQueue.obj	\
+			$(TMPDIR)\bufStubInit.obj	\
+			$(TMPDIR)\bufStubLib.obj	\
 			$(TMPDIR)\dllEntry.obj
 
 
