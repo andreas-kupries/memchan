@@ -528,7 +528,7 @@ ClientData instanceData; /* Channel to query */
     return;
   }
 
-  if (chan->rwLoc >= chan->used)
+  if (chan->rwLoc > chan->used)
     mask &= ~TCL_READABLE;
 
   /* Tell Tcl about the possible events.
