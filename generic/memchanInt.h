@@ -123,6 +123,7 @@ panic _ANSI_ARGS_ (TCL_VARARGS(char*, format));
 #define Tcl_Panic panic
 #endif
 
+#undef HAVE_LTOA /* Forcing 'sprintf'. HP ltoa function signature may diverge */
 #ifdef HAVE_LTOA
 #define LTOA(x,str) ltoa (x, str, 10)
 #else
