@@ -24,6 +24,7 @@ MC_TOPDIR	=	$(srcdir)/..
 MC_GENSRCDIR	=	$(MC_TOPDIR)/generic
 MC_DOCDIR	=	$(MC_TOPDIR)/doc
 MC_TESTDIR	=	$(MC_TOPDIR)/tests
+MC_TEATESTDIR	=	$(MC_TOPDIR)/tea.tests
 
 #========================================================================
 # This is the (parameterized) name of the library that we are building.
@@ -277,6 +278,15 @@ install-doc: doc
 check:	test
 test:
 	echo load ./$(Memchan_LIB_FILE) \; cd $(MC_TESTDIR) \; source all | $(TCLSH_PROG)
+
+testshell	=	$(TCLSH_PROG) $(srcdir)/testshell
+
+tcheck:
+ttest:
+	$(testshell)	\
+		-load 'load ./$(Memchan_LIB_FILE)' \
+		-testdir $(MC_TEATESTDIR) 
+
 
 #	LD_LIBRARY_PATH="$(srcdir):$(TCL_LIB_DIR)"; export \
 #	SHLIB_PATH="$(srcdir):$(TCL_LIB_DIR)"; \
