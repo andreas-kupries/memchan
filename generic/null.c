@@ -108,10 +108,6 @@ BlockMode (instanceData, mode)
      ClientData instanceData;
      int mode;
 {
-    /* Fail if blocking is tried */
-    if (mode == TCL_MODE_BLOCKING) {
-        return EINVAL;
-    }
     return 0;
 }
 
