@@ -11,7 +11,7 @@ mExclude \
 	unix/bdist/ak.1           \
 	unix/bdist/ak.2           \
 	unix/bdist/ak.3
-
+mExclude win/bdist unix/bdist
 
 
 # O. insert various information into some files
