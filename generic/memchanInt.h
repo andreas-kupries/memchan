@@ -134,12 +134,12 @@ MemchanFifoCmd _ANSI_ARGS_ ((ClientData notUsed,
 extern int
 MemchanCmd _ANSI_ARGS_ ((ClientData notUsed,
 			 Tcl_Interp* interp,
-			 int objc, Tcl_Obj** objv));
+			 int objc, Tcl_Obj*CONST objv[]));
 
 extern int
 MemchanFifoCmd _ANSI_ARGS_ ((ClientData notUsed,
 			     Tcl_Interp* interp,
-			     int objc, Tcl_Obj** objv));
+			     int objc, Tcl_Obj*CONST objv[]));
 #define ARGC objc
 #endif
 

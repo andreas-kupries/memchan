@@ -652,10 +652,10 @@ int         argc;		/* Number of arguments. */
 char**      argv;		/* Argument strings. */
 #else
 MemchanCmd (notUsed, interp, objc, objv)
-ClientData  notUsed;		/* Not used. */
-Tcl_Interp* interp;		/* Current interpreter. */
-int         objc;		/* Number of arguments. */
-Tcl_Obj**   objv;		/* Argument objects. */
+ClientData    notUsed;		/* Not used. */
+Tcl_Interp*   interp;		/* Current interpreter. */
+int           objc;		/* Number of arguments. */
+Tcl_Obj*CONST objv[];		/* Argument objects. */
 #endif
 {
   Tcl_Channel      chan;
