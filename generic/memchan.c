@@ -69,8 +69,6 @@
 #else
 #   define EXPORT(a,b) a b
 #endif
-#else
-#   define EXPORT(a,b) a b
 #endif
 
 
