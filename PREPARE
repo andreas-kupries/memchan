@@ -72,7 +72,7 @@ if {0} {
 
 cd doc
 exec ../tools/manpage_regen > /dev/null 2>/dev/null
-
+cd ..
 
 #mHandleBinaryDistributions
 #mHandleBinaryDistributions doc/license.terms README
