@@ -63,7 +63,8 @@ INSTALLDIR	=	$(TCL)\lib\$(MC)
 MCOBJS		=	$(TMPDIR)\memchan.obj	\
 			$(TMPDIR)\fifo.obj	\
 			$(TMPDIR)\init.obj	\
-			$(TMPDIR)\counter.obj
+			$(TMPDIR)\counter.obj	\
+			$(TMPDIR)\dllEntry.obj
 
 
 PATH=$(TOOLS32)\bin;$(PATH)

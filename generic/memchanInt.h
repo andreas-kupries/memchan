@@ -65,7 +65,6 @@ extern "C" {
 #   if defined(_MSC_VER)
 #       undef EXPORT
 #	define EXPORT(a,b) TCL_STORAGE_CLASS a b
-#	define DllEntryPoint DllMain
 #   else
 #	if defined(__BORLANDC__)
 #	    define EXPORT(a,b) a _export b
