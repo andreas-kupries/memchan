@@ -29,6 +29,7 @@
 
 #include <tcl.h>
 #include <errno.h>
+#include <string.h>
 
 #include "memchanInt.h"
 
@@ -555,7 +556,7 @@ Tcl_Obj*CONST objv[];		/* Argument objects. */
 
   if ((objc != 1) && (objc != 3)) {
     goto argerr;
-  } else if (objc = 3) {
+  } else if (objc == 3) {
     int   len;
     char* buf = Tcl_GetStringFromObj (objv [1], &len);
 
