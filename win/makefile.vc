@@ -192,7 +192,8 @@ PRJDOCS = \
 	$(OUT_DIR)\memchan.html \
 	$(OUT_DIR)\null.html \
 	$(OUT_DIR)\zero.html \
-	$(OUT_DIR)\random.html
+	$(OUT_DIR)\random.html \
+	$(OUT_DIR)\memchanapi.html
 
 DLLRES = $(TMP_DIR)\mc.res
 
