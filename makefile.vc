@@ -163,16 +163,17 @@ test:	    $(MCDLL)
 
 install:	$(MCDLL)
 	-@md	$(INSTALLDIR)
-	-@$(CP) $(MCDLL)              $(INSTALLDIR)
-	-@$(CP) $(ROOT)\pkgIndex.tcl $(INSTALLDIR)
+	-@$(CP) $(MCDLL)		$(INSTALLDIR)
+	-@$(CP) $(ROOT)\pkgIndex.win	$(INSTALLDIR)\pkgIndex.tcl
 
 bindist:	$(MCDLL)
-	-@md	$(TMPDIR)\$(MC)
-	-@$(CP) $(MCDLL)		$(TMPDIR)\$(MC)
-	-@$(CP) $(ROOT)\pkgIndex.tcl	$(TMPDIR)\$(MC)
-	$(PKZIP) -r $(MC)b.zip $(TMPDIR)\$(MC)
-
-
+	-@md	$(MC)
+	-@$(CP) $(MCDLL)		$(MC)\$(MCDLL)
+	-@$(CP) $(ROOT)\pkgIndex.win	$(MC)\pkgIndex.tcl
+	$(PKZIP) -r $(MC)b.zip	$(MC)
+	-@$(RM)	$(MC)\$(MCDLL)
+	-@$(RM)	$(MC)\pkgIndex.tcl
+	-@rd	$(MC)
 
 
 $(MCDLL): $(MCOBJS)
