@@ -310,7 +310,8 @@ int*       errorCodePtr;	/* Location of error flag. */
     break;
 
   case SEEK_END:
-    newLocation = chan->used - offset;
+    /* SF Memchan Bug 556819 */
+    newLocation = chan->used + offset;
     break;
 
   default:
