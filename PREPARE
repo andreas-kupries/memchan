@@ -23,6 +23,7 @@ eval mInsertInfo \
 	DESCRIPTION doc/manual \
 	README win/README win/README.VC mac/README \
 	unix/configure.in unix/Makefile.in \
+	tea/configure.in tea/Makefile.in \
 	[glob win/makefile.vc*] win/Makefile.gnu win/mc.rc \
 	[glob doc/nodes/*.node] [glob doc/nodes/*.def]
 
@@ -51,6 +52,7 @@ mExclude patches mails
 
 # generate configure script to be used
 mConfigure unix
+mConfigure tea
 
 # Integrate tk-based testsuite interface.
 

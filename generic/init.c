@@ -28,6 +28,7 @@
  * CVS: $Id$
  */
 
+#include <stdlib.h>
 #include "memchanInt.h"
 
 /*
