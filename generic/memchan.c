@@ -372,7 +372,7 @@ Tcl_DString* dsPtr;		/* String to place the result into */
       (0 != strcmp (optionName, "-length")) &&
       (0 != strcmp (optionName, "-allocated"))) {
     Tcl_SetErrno (EINVAL);
-    return Tcl_BadChannelOption (interp, optionName, "length");
+    return Tcl_BadChannelOption (interp, optionName, "length allocated");
   }
 
   if (optionName == (char*) NULL) {
