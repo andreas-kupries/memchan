@@ -23,7 +23,7 @@
 #undef  TCL_STORAGE_CLASS
 #define TCL_STORAGE_CLASS DLLEXPORT
 
-BufStubs *bufStubsPtr;
+extern BufStubs *bufStubsPtr;
 MemchanStubs *memchanStubsPtr;
 
 /*
