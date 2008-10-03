@@ -29,6 +29,7 @@
 
 
 #include <errno.h>
+#include <string.h>
 #define USE_NON_CONST
 #include <tcl.h>
 
