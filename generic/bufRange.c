@@ -3,7 +3,7 @@
  *
  *	Implementations of a range into a buffer.
  *
- * Copyright (c) 2000 by Andreas Kupries <a.kupries@westend.com>
+ * Copyright (c) 2000-2009 by Andreas Kupries <a.kupries@westend.com>
  *
  * See the file "license.terms" for information on usage and redistribution
  * of this file, and for a DISCLAIMER OF ALL WARRANTIES.
@@ -11,6 +11,7 @@
  * RCS: @(#) $Id$
  */
 
+#include "memchanInt.h"
 #include "buf.h"
 
 /*
