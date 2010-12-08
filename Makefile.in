@@ -319,7 +319,7 @@ DIST_DIR	= $(DIST_ROOT)/$(PKG_DIR)
 dist-clean:
 	rm -rf $(DIST_DIR) $(DIST_ROOT)/$(PKG_DIR).tar.*
 
-dist: dist-clean doc
+dist: dist-clean
 	mkdir -p $(DIST_DIR)
 	cp -p   $(srcdir)/ChangeLog \
 		$(srcdir)/README* \
