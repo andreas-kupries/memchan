@@ -32,6 +32,9 @@
 #include <string.h> /* strncmp */
 #define USE_NON_CONST
 #include <tcl.h>
+#ifdef HAVE_STDINT_H
+#include <stdint.h>
+#endif
 
 /*
  * Make sure that both EAGAIN and EWOULDBLOCK are defined. This does not
