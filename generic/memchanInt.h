@@ -29,7 +29,7 @@
 
 
 #include <errno.h>
-#include <string.h>
+#include <string.h> /* strncmp */
 #define USE_NON_CONST
 #include <tcl.h>
 

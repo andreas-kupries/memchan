@@ -27,7 +27,6 @@
  */
 
 
-#include <string.h> /* strncmp */
 #include <stdio.h>  /* SEEK_ constants */
 #include "memchanInt.h"
 
