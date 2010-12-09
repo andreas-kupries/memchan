@@ -38,6 +38,9 @@
 #ifdef HAVE_INTTYPES_H
 #include <inttypes.h>
 #endif
+#ifdef STDC_HEADERS
+#include <stddef.h>
+#endif
 
 /*
  * Make sure that both EAGAIN and EWOULDBLOCK are defined. This does not
