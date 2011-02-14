@@ -445,7 +445,7 @@ ClientData instanceData; /* Channel to query */
     return;
   }
 
-  if (! FIFO_EMPTY (chan)) {
+  if (FIFO_EMPTY (chan)) {
     mask &= ~TCL_READABLE;
   }
 
